@@ -49,8 +49,10 @@ import {
 import Header from "components/Headers/Header.js";
 import AssuranceHeader from "../components/Headers/AssuranceHeader";
 import HopitalHeader from "../components/Headers/HopitalHeader";
+import PharmacieHeader from "../components/Headers/PharmacieHeader";
+import PatientHeader from "../components/Headers/PatientHeader";
 
-const IndexHopital = (props) => {
+const IndexPatient = (props) => {
     const [activeNav, setActiveNav] = useState(1);
     const [chartExample1Data, setChartExample1Data] = useState("data1");
 
@@ -65,7 +67,7 @@ const IndexHopital = (props) => {
     };
     return (
         <>
-            <HopitalHeader/>
+            <PatientHeader/>
             {/* Page content */}
             <Container className="mt--7" fluid>
                 <Row>
@@ -77,7 +79,7 @@ const IndexHopital = (props) => {
                                         <h6 className="text-uppercase text-light ls-1 mb-1">
                                             Overview
                                         </h6>
-                                        <h2 className="text-white mb-0">Gestion de la caise</h2>
+                                        <h2 className="text-white mb-0">Sales value</h2>
                                     </div>
                                     <div className="col">
                                         <Nav className="justify-content-end" pills>
@@ -89,20 +91,61 @@ const IndexHopital = (props) => {
                                                     href="#pablo"
                                                     onClick={(e) => toggleNavs(e, 1)}
                                                 >
-                                                    <span className="d-none d-md-block">Gerer les remboursement</span>
+                                                    <span className="d-none d-md-block">Month</span>
                                                     <span className="d-md-none">M</span>
                                                 </NavLink>
                                             </NavItem>
-
+                                            <NavItem>
+                                                <NavLink
+                                                    className={classnames("py-2 px-3", {
+                                                        active: activeNav === 2,
+                                                    })}
+                                                    data-toggle="tab"
+                                                    href="#pablo"
+                                                    onClick={(e) => toggleNavs(e, 2)}
+                                                >
+                                                    <span className="d-none d-md-block">Week</span>
+                                                    <span className="d-md-none">W</span>
+                                                </NavLink>
+                                            </NavItem>
                                         </Nav>
                                     </div>
                                 </Row>
                             </CardHeader>
-
+                            <CardBody>
+                                {/* Chart */}
+                                <div className="chart">
+                                    <Line
+                                        data={chartExample1[chartExample1Data]}
+                                        options={chartExample1.options}
+                                        getDatasetAtEvent={(e) => console.log(e)}
+                                    />
+                                </div>
+                            </CardBody>
                         </Card>
                     </Col>
                     <Col xl="4">
-
+                        <Card className="shadow">
+                            <CardHeader className="bg-transparent">
+                                <Row className="align-items-center">
+                                    <div className="col">
+                                        <h6 className="text-uppercase text-muted ls-1 mb-1">
+                                            Performance
+                                        </h6>
+                                        <h2 className="mb-0">Total orders</h2>
+                                    </div>
+                                </Row>
+                            </CardHeader>
+                            <CardBody>
+                                {/* Chart */}
+                                <div className="chart">
+                                    <Bar
+                                        data={chartExample2.data}
+                                        options={chartExample2.options}
+                                    />
+                                </div>
+                            </CardBody>
+                        </Card>
                     </Col>
                 </Row>
                 <Row className="mt-5">
@@ -111,7 +154,7 @@ const IndexHopital = (props) => {
                             <CardHeader className="border-0">
                                 <Row className="align-items-center">
                                     <div className="col">
-                                        <h3 className="mb-0">Liste des remboursement</h3>
+                                        <h3 className="mb-0">Page visits</h3>
                                     </div>
                                     <div className="col text-right">
                                         <Button
@@ -120,7 +163,7 @@ const IndexHopital = (props) => {
                                             onClick={(e) => e.preventDefault()}
                                             size="sm"
                                         >
-                                            Ajouter un remboursement
+                                            See all
                                         </Button>
                                     </div>
                                 </Row>
@@ -128,54 +171,54 @@ const IndexHopital = (props) => {
                             <Table className="align-items-center table-flush" responsive>
                                 <thead className="thead-light">
                                 <tr>
-                                    <th scope="col">Nom du patient</th>
-                                    <th scope="col">Montant</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Page name</th>
+                                    <th scope="col">Visitors</th>
+                                    <th scope="col">Unique users</th>
+                                    <th scope="col">Bounce rate</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row">S. Amidou</th>
-                                    <td>30000 FCFA</td>
-                                    <td>01/02/2023</td>
+                                    <th scope="row">/argon/</th>
+                                    <td>4,569</td>
+                                    <td>340</td>
                                     <td>
-                                        <i className="fas fa-arrow-up text-success mr-3" /> Traité
+                                        <i className="fas fa-arrow-up text-success mr-3" /> 46,53%
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">B. Pauline</th>
-                                    <td>45000 FCFA</td>
-                                    <td>03/05/2023</td>
-                                    <td>
-                                        <i className="fas fa-arrow-down text-warning mr-3" />{" "}
-                                        Envoyer
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">K. Adama</th>
-                                    <td>50000 FCFA</td>
-                                    <td>06/11/2023</td>
+                                    <th scope="row">/argon/index.html</th>
+                                    <td>3,985</td>
+                                    <td>319</td>
                                     <td>
                                         <i className="fas fa-arrow-down text-warning mr-3" />{" "}
-                                        En cours de traitement
+                                        46,53%
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">C. Blaise</th>
-                                    <td>17500 FCFA</td>
-                                    <td>12/12/2023</td>
+                                    <th scope="row">/argon/charts.html</th>
+                                    <td>3,513</td>
+                                    <td>294</td>
                                     <td>
-                                        <i className="fas fa-arrow-up text-success mr-3" /> Envoyer
+                                        <i className="fas fa-arrow-down text-warning mr-3" />{" "}
+                                        36,49%
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">T. Pierre</th>
-                                    <td>275000 FCFA</td>
-                                    <td>20/07/2023</td>
+                                    <th scope="row">/argon/tables.html</th>
+                                    <td>2,050</td>
+                                    <td>147</td>
+                                    <td>
+                                        <i className="fas fa-arrow-up text-success mr-3" /> 50,87%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">/argon/profile.html</th>
+                                    <td>1,795</td>
+                                    <td>190</td>
                                     <td>
                                         <i className="fas fa-arrow-down text-danger mr-3" />{" "}
-                                        En cours de traitement
+                                        46,53%
                                     </td>
                                 </tr>
                                 </tbody>
@@ -187,7 +230,7 @@ const IndexHopital = (props) => {
                             <CardHeader className="border-0">
                                 <Row className="align-items-center">
                                     <div className="col">
-                                        <h3 className="mb-0">Liste des medecins</h3>
+                                        <h3 className="mb-0">Social traffic</h3>
                                     </div>
                                     <div className="col text-right">
                                         <Button
@@ -196,7 +239,7 @@ const IndexHopital = (props) => {
                                             onClick={(e) => e.preventDefault()}
                                             size="sm"
                                         >
-                                            Ajouter un medecin
+                                            See all
                                         </Button>
                                     </div>
                                 </Row>
@@ -204,9 +247,9 @@ const IndexHopital = (props) => {
                             <Table className="align-items-center table-flush" responsive>
                                 <thead className="thead-light">
                                 <tr>
-                                    <th scope="col">Nom</th>
-                                    <th scope="col">Prenom</th>
-                                    <th scope="col">Numero</th>
+                                    <th scope="col">Referral</th>
+                                    <th scope="col">Visitors</th>
+                                    <th scope="col" />
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -296,4 +339,4 @@ const IndexHopital = (props) => {
     );
 };
 
-export default IndexHopital;
+export default IndexPatient;

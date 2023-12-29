@@ -28,6 +28,7 @@ import AuthLayout from "layouts/Auth.js";
 import Assurance from "./layouts/Assurance";
 import Hopital from "./layouts/Hopital";
 import Pharmacie from "./layouts/Pharmacie";
+import Patient from "./layouts/Patient";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -39,8 +40,8 @@ root.render(
       <Route path="/assurance/*" element={<Assurance />} />
       <Route path="/hopital/*" element={<Hopital />} />
       <Route path="/pharmacie/*" element={<Pharmacie />} />
-
-        <Route path="*" element={<Navigate to="/admin/index" replace />} />
+      <Route path="/patient/*" element={<Patient />} />
+      <Route path="*" element={<Navigate to="/admin/index" replace />} />
     </Routes>
   </BrowserRouter>
 );

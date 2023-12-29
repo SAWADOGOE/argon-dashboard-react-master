@@ -25,6 +25,9 @@ import Icons from "views/examples/Icons.js";
 import IndexAssurance from "./views/IndexAssurance";
 import IndexHopital from "./views/IndexHopital";
 import IndexPharmacie from "./views/IndexPharmacie";
+import IndexPatient from "./views/IndexPatient";
+import TableHopital from "./views/examples/TableHopital";
+import Remboursement from "./views/examples/Remboursement";
 
 var routes = [
   {
@@ -35,9 +38,18 @@ var routes = [
     layout: "/admin",
   },
 
+
   {
     path: "/index",
-    name: "Dashboard",
+    name: "Dashboard-patient",
+    icon: "ni ni-tv-2 text-primary",
+    component: <IndexPatient />,
+    layout: "/patient",
+  },
+
+  {
+    path: "/index",
+    name: "Dashboard-pharmacie",
     icon: "ni ni-tv-2 text-primary",
     component: <IndexPharmacie />,
     layout: "/pharmacie",
@@ -45,7 +57,7 @@ var routes = [
 
   {
     path: "/index",
-    name: "Assurance",
+    name: "Assurance-assurance",
     icon: "ni ni-tv-2 text-primary",
     component: <IndexAssurance />,
     layout: "/assurance",
@@ -53,7 +65,7 @@ var routes = [
 
   {
     path: "/index",
-    name: "Hopital",
+    name: "Hopital-dashboard",
     icon: "ni ni-tv-2 text-primary",
     component: <IndexHopital />,
     layout: "/hopital",
@@ -108,17 +120,33 @@ var routes = [
 
   {
     path: "/tables",
-    name: "Tables",
+    name: "Liste des patients",
     icon: "ni ni-bullet-list-67 text-red",
-    component: <Tables />,
+    component: <TableHopital />,
+    layout: "/hopital",
+  },
+
+  {
+    path: "/tables",
+    name: "Liste des Medecins",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: <TableHopital />,
+    layout: "/hopital",
+  },
+
+  {
+    path: "/tables",
+    name: "Liste des Remboursement",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: <TableHopital />,
     layout: "/hopital",
   },
 
   {
     path: "/user-profile",
-    name: "User Profile",
+    name: "traiter un remboursement",
     icon: "ni ni-single-02 text-yellow",
-    component: <Profile />,
+    component: <Remboursement />,
     layout: "/hopital",
   },
 
