@@ -133,9 +133,9 @@ const PatientHeader = () => {
                                             </Col>
                                         </Row>
                                         <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-success mr-2">
-                        <i className="fas fa-arrow-up" /> 12%
-                      </span>{" "}
+                                            <span className="text-success mr-2">
+                                                <i className="fas fa-arrow-up" /> 12%
+                                            </span>{" "}
                                             <span className="text-nowrap">Since last month</span>
                                         </p>
                                     </CardBody>

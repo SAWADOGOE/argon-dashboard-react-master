@@ -38,38 +38,6 @@ var routes = [
     layout: "/admin",
   },
 
-
-  {
-    path: "/index",
-    name: "Dashboard-patient",
-    icon: "ni ni-tv-2 text-primary",
-    component: <IndexPatient />,
-    layout: "/patient",
-  },
-
-  {
-    path: "/index",
-    name: "Dashboard-pharmacie",
-    icon: "ni ni-tv-2 text-primary",
-    component: <IndexPharmacie />,
-    layout: "/pharmacie",
-  },
-
-  {
-    path: "/index",
-    name: "Assurance-assurance",
-    icon: "ni ni-tv-2 text-primary",
-    component: <IndexAssurance />,
-    layout: "/assurance",
-  },
-
-  {
-    path: "/index",
-    name: "Hopital-dashboard",
-    icon: "ni ni-tv-2 text-primary",
-    component: <IndexHopital />,
-    layout: "/hopital",
-  },
   {
     path: "/user-profile",
     name: "User Profile",
@@ -77,6 +45,8 @@ var routes = [
     component: <Profile />,
     layout: "/admin",
   },
+
+
   {
     path: "/tables",
     name: "Tables",
@@ -92,6 +62,7 @@ var routes = [
     component: <Tables />,
     layout: "/admin",
   },
+
 
   {
     path: "/tables",
@@ -118,6 +89,37 @@ var routes = [
     layout: "/admin",
   },
 
+
+  //auth
+
+
+  {
+    path: "/login",
+    name: "Login",
+    icon: "ni ni-key-25 text-info",
+    component: <Login />,
+    layout: "/auth",
+  },
+
+  {
+    path: "/register",
+    name: "Register",
+    icon: "ni ni-circle-08 text-pink",
+    component: <Register />,
+    layout: "/auth",
+  },
+
+
+
+//Hopital
+
+{
+  path: "/index",
+  name: "Hopital-dashboard",
+  icon: "ni ni-tv-2 text-primary",
+  component: <IndexHopital />,
+  layout: "/hopital",
+},
   {
     path: "/tables",
     name: "Liste des patients",
@@ -150,17 +152,29 @@ var routes = [
     layout: "/hopital",
   },
 
+  
+
+
+
+  //patient
+
 
   {
-    path: "/tables",
-    name: "Tables_pharmacie",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: <IndexPharmacie />,
-    layout: "/pharmacie",
+    path: "/index",
+    name: "Dashboard-patient",
+    icon: "ni ni-tv-2 text-primary",
+    component: <IndexPatient />,
+    layout: "/patient",
   },
 
-
-
+//assurance
+  {
+    path: "/index",
+    name: "Assurance-assurance",
+    icon: "ni ni-tv-2 text-primary",
+    component: <IndexAssurance />,
+    layout: "/assurance",
+  },
 
   {
     path: "/tables",
@@ -171,27 +185,12 @@ var routes = [
   },
   {
     path: "/login",
-    name: "Login",
-    icon: "ni ni-key-25 text-info",
-    component: <Login />,
-    layout: "/auth",
-  },
-
-  {
-    path: "/login",
     name: "Login-assurance",
     icon: "ni ni-key-25 text-info",
     component: <Login />,
     layout: "/assurance",
   },
-  {
-    path: "/register",
-    name: "Register",
-    icon: "ni ni-circle-08 text-pink",
-    component: <Register />,
-    layout: "/auth",
-  },
-
+  
   {
     path: "/register",
     name: "Register-assurance",
@@ -199,5 +198,28 @@ var routes = [
     component: <Register />,
     layout: "/assurance",
   },
+
+  
+
+  //Pharmacie
+  
+  {
+    path: "/index",
+    name: "Dashboard-pharmacie",
+    icon: "ni ni-tv-2 text-primary",
+    component: <IndexPharmacie />,
+    layout: "/pharmacie",
+  },
+
+  {
+    path: "/tables",
+    name: "Ordonnance",
+    icon: "ni ni-file text-yellow",
+    component: <IndexPharmacie />,
+    layout: "/pharmacie",
+  },
+
+  
+
 ];
 export default routes;
