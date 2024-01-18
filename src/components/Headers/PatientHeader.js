@@ -36,7 +36,7 @@ const PatientHeader = () => {
                                                     tag="h5"
                                                     className="text-uppercase text-muted mb-0"
                                                 >
-                                                    Traffic
+                                                UTILISATEUR
                                                 </CardTitle>
                                                 <span className="h2 font-weight-bold mb-0">
                           350,897
@@ -66,7 +66,7 @@ const PatientHeader = () => {
                                                     tag="h5"
                                                     className="text-uppercase text-muted mb-0"
                                                 >
-                                                    New users
+                                                    REMBOURSEMENT
                                                 </CardTitle>
                                                 <span className="h2 font-weight-bold mb-0">2,356</span>
                                             </div>
